@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // Modern Node.js target
-    "module": "CommonJS", // CommonJS for Node.js compatibility
-    "outDir": "public", // Output compiled JS to public directory
-    "rootDir": "src", // Source files in src directory
-    "strict": true, // Enforce strict type checking
-    "esModuleInterop": true, // Allow importing CommonJS modules
-    "skipLibCheck": true, // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true, // Enforce consistent file name casing
-    "moduleResolution": "node", // Node.js module resolution
-    "allowJs": false, // Disable JS files unless you have them
-    "noEmit": false, // Ensure files are emitted
+    "target": "ES2020",
+    "module": "ESNext",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "public"]
+  "exclude": ["node_modules", "dist"]
 }
