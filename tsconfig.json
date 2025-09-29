@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "ESNext",
     "esModuleInterop": true,
     "strict": true, // Enables all strict type-checking options
     "skipLibCheck": true, // Skips type checking of declaration files
