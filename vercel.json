@@ -5,11 +5,11 @@
       "use": "@vercel/node"
     }
   ],
-  "outputDirectory": "public",
+  "outputDirectory": "dist",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/public/index.js"
+      "dest": "/dist/index.js"
     }
   ]
 }
