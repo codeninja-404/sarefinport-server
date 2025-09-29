@@ -43,132 +43,115 @@ app.get("/api/health", (req, res) => {
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d0d0d;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: #e0e0e0;
+            padding: 16px;
+            color: #d9d9d9;
         }
-
         .container {
-            background: #2a2a4a;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
             width: 100%;
             text-align: center;
-            border: 1px solid #3a3a5a;
+            border: 1px solid #2a2a2a;
         }
-
         .logo {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: #00ff88;
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: #00cc88;
         }
-
         h1 {
             color: #ffffff;
-            margin-bottom: 15px;
-            font-size: 2.2rem;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            font-size: 1.8rem;
+            margin-bottom: 12px;
         }
-
         .status {
-            background: #1e3a8a;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
+            background: #1e1e1e;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 12px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            border: 1px solid #3b82f6;
+            gap: 8px;
+            border: 1px solid #2a2a2a;
         }
-
         .status-dot {
-            width: 14px;
-            height: 14px;
-            background: #00ff88;
+            width: 10px;
+            height: 10px;
+            background: #00cc88;
             border-radius: 50%;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 15px #00ff88;
+            animation: pulse 1.5s infinite;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 0.7; }
             100% { transform: scale(1); opacity: 1; }
         }
-
         .status-text {
-            color: #00ff88;
-            font-weight: 600;
+            color: #00cc88;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
-
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 12px 0;
         }
-
         .info-card {
-            background: #3a3a5a;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #4a4a6a;
-            transition: transform 0.3s ease;
+            background: #1e1e1e;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s ease;
         }
-
         .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+            transform: translateY(-2px);
         }
-
         .info-card h4 {
-            color: #a0a0c0;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
+            color: #a0a0a0;
+            font-size: 0.75rem;
+            margin-bottom: 4px;
         }
-
         .info-card p {
             color: #ffffff;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
-
         .back-link {
             display: inline-block;
-            background: #3b82f6;
+            background: #007bff;
             color: #ffffff;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 8px 20px;
+            border-radius: 20px;
             text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            border: 1px solid #60a5fa;
+            font-size: 0.85rem;
+            margin-top: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #3388ff;
         }
-
         .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            background: #0056b3;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">⚡️</div>
-        <h1>Server Health Check</h1>
+        <h1>Server Health</h1>
         <div class="status">
             <div class="status-dot"></div>
-            <span class="status-text">Server is running smoothly</span>
+            <span class="status-text">Operational</span>
         </div>
         <div class="info-grid">
             <div class="info-card">
@@ -188,7 +171,7 @@ app.get("/api/health", (req, res) => {
                 <p>${process.uptime().toFixed(0)}s</p>
             </div>
         </div>
-        <a href="/" class="back-link">← Back to Home</a>
+        <a href="/" class="back-link">← Home</a>
     </div>
 </body>
 </html>
@@ -211,194 +194,167 @@ app.get("/", (req, res) => {
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d0d0d;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: #e0e0e0;
+            padding: 16px;
+            color: #d9d9d9;
         }
-
         .container {
-            background: #2a2a4a;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            max-width: 700px;
             width: 100%;
             text-align: center;
-            border: 1px solid #3a3a5a;
+            border: 1px solid #2a2a2a;
         }
-
         .logo {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: #00ff88;
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: #00cc88;
         }
-
         h1 {
             color: #ffffff;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            font-size: 2rem;
+            margin-bottom: 8px;
         }
-
         .subtitle {
-            color: #a0a0c0;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
         }
-
         .status {
-            background: #1e3a8a;
-            border-radius: 12px;
-            padding: 15px;
-            margin: 20px 0;
+            background: #1e1e1e;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 12px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            border: 1px solid #3b82f6;
+            gap: 8px;
+            border: 1px solid #2a2a2a;
         }
-
         .status-dot {
-            width: 14px;
-            height: 14px;
-            background: #00ff88;
+            width: 10px;
+            height: 10px;
+            background: #00cc88;
             border-radius: 50%;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 15px #00ff88;
+            animation: pulse 1.5s infinite;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 0.7; }
             100% { transform: scale(1); opacity: 1; }
         }
-
         .endpoints {
-            background: #3a3a5a;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 25px 0;
+            background: #1e1e1e;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 12px 0;
             text-align: left;
-            border: 1px solid #4a4a6a;
+            border: 1px solid #2a2a2a;
         }
-
         .endpoint-group {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
-
         .endpoint-group h3 {
             color: #ffffff;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
         }
-
         .endpoint {
-            background: #4a4a6a;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 8px;
-            border-left: 4px solid #00ff88;
+            background: #2a2a2a;
+            padding: 8px 12px;
+            margin: 6px 0;
+            border-radius: 6px;
+            border-left: 3px solid #00cc88;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
-
         .endpoint:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+            transform: translateX(3px);
         }
-
         .method {
-            background: #3b82f6;
+            background: #007bff;
             color: #ffffff;
-            padding: 4px 8px;
+            padding: 3px 6px;
             border-radius: 4px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
-            margin-right: 10px;
+            margin-right: 8px;
         }
-
         .path {
             flex-grow: 1;
-            color: #e0e0e0;
+            color: #d9d9d9;
             font-family: monospace;
+            font-size: 0.85rem;
         }
-
         .description {
-            color: #a0a0c0;
-            font-size: 0.9rem;
+            color: #a0a0a0;
+            font-size: 0.8rem;
         }
-
         .quick-links {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 25px 0;
+            margin: 12px 0;
         }
-
         .link {
-            background: #3b82f6;
+            background: #007bff;
             color: #ffffff;
-            padding: 12px 25px;
-            border-radius: 25px;
+            padding: 8px 20px;
+            border-radius: 20px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid #60a5fa;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            border: 1px solid #3388ff;
         }
-
         .link:hover {
-            background: #2563eb;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            background: #0056b3;
+            transform: translateY(-2px);
         }
-
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 25px 0;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 12px 0;
         }
-
         .info-card {
-            background: #3a3a5a;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #4a4a6a;
-            transition: transform 0.3s ease;
+            background: #1e1e1e;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s ease;
         }
-
         .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+            transform: translateY(-2px);
         }
-
         .info-card h4 {
-            color: #a0a0c0;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
+            color: #a0a0a0;
+            font-size: 0.75rem;
+            margin-bottom: 4px;
         }
-
         .info-card p {
             color: #ffffff;
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
-
         .footer {
-            margin-top: 30px;
-            color: #a0a0c0;
-            font-size: 0.9rem;
+            margin-top: 16px;
+            color: #a0a0a0;
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -406,13 +362,11 @@ app.get("/", (req, res) => {
     <div class="container">
         <div class="logo">🚀</div>
         <h1>SarefinPort Server</h1>
-        <div class="subtitle">Personal Portfolio Backend API</div>
-
+        <div class="subtitle">Portfolio Backend API</div>
         <div class="status">
             <div class="status-dot"></div>
-            <strong>Server is running smoothly</strong>
+            <strong>Operational</strong>
         </div>
-
         <div class="info-grid">
             <div class="info-card">
                 <h4>Environment</h4>
@@ -431,7 +385,6 @@ app.get("/", (req, res) => {
                 <p>${process.uptime().toFixed(0)}s</p>
             </div>
         </div>
-
         <div class="endpoints">
             <div class="endpoint-group">
                 <h3>🔐 Authentication</h3>
@@ -450,7 +403,6 @@ app.get("/", (req, res) => {
                     <span class="description">Create admin account</span>
                 </div>
             </div>
-
             <div class="endpoint-group">
                 <h3>📄 Portfolio</h3>
                 <div class="endpoint">
@@ -482,7 +434,6 @@ app.get("/", (req, res) => {
                     <span class="description">Education history</span>
                 </div>
             </div>
-
             <div class="endpoint-group">
                 <h3>📞 Contact</h3>
                 <div class="endpoint">
@@ -500,7 +451,6 @@ app.get("/", (req, res) => {
                     <span class="description">Submit contact form</span>
                 </div>
             </div>
-
             <div class="endpoint-group">
                 <h3>⚙️ System</h3>
                 <div class="endpoint">
@@ -512,15 +462,13 @@ app.get("/", (req, res) => {
                 </div>
             </div>
         </div>
-
         <div class="quick-links">
             <a href="/api/health" class="link">Health Check</a>
-            <a href="/api" class="link">API Documentation</a>
-            <a href="/api/about" class="link">View Portfolio</a>
+            <a href="/api" class="link">API Docs</a>
+            <a href="/api/about" class="link">Portfolio</a>
         </div>
-
         <div class="footer">
-            <p>🚀 Powered by Express.js & PostgreSQL | SarefinPort Server v1.0.0</p>
+            <p>Powered by Express.js & PostgreSQL | v1.0.0</p>
         </div>
     </div>
 </body>
@@ -537,144 +485,127 @@ app.get("/api", (req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Documentation - SarefinPort</title>
+    <title>API Docs - SarefinPort</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d0d0d;
             min-height: 100vh;
-            padding: 40px 20px;
-            color: #e0e0e0;
+            padding: 16px;
+            color: #d9d9d9;
         }
-
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
-
         .header {
-            background: #2a2a4a;
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid #3a3a5a;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a2a;
         }
-
         .logo {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            color: #00ff88;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #00cc88;
         }
-
         h1 {
             color: #ffffff;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
         }
-
         .subtitle {
-            color: #a0a0c0;
-            font-size: 1.1rem;
+            color: #a0a0a0;
+            font-size: 0.9rem;
         }
-
         .docs-container {
-            background: #2a2a4a;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid #3a3a5a;
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a2a;
         }
-
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 16px;
         }
-
         .section h2 {
             color: #ffffff;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #4a4a6a;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #2a2a2a;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
         }
-
         .endpoint {
-            background: #3a3a5a;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid #00ff88;
-            transition: transform 0.3s ease;
+            background: #2a2a2a;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-left: 3px solid #00cc88;
+            transition: transform 0.2s ease;
         }
-
         .endpoint:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+            transform: translateX(3px);
         }
-
         .endpoint-header {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
-
         .method {
-            background: #3b82f6;
+            background: #007bff;
             color: #ffffff;
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 3px 10px;
+            border-radius: 4px;
             font-weight: bold;
-            margin-right: 15px;
-            min-width: 80px;
+            font-size: 0.75rem;
+            margin-right: 10px;
+            min-width: 70px;
             text-align: center;
         }
-
         .path {
             font-family: monospace;
-            font-size: 1.1rem;
-            color: #e0e0e0;
+            font-size: 0.9rem;
+            color: #d9d9d9;
             flex-grow: 1;
         }
-
         .description {
-            color: #a0a0c0;
-            margin-bottom: 10px;
-        }
-
-        .auth-badge {
-            background: #ff3e3e;
-            color: #ffffff;
-            padding: 4px 8px;
-            border-radius: 4px;
+            color: #a0a0a0;
             font-size: 0.8rem;
-            margin-left: 10px;
         }
-
+        .auth-badge {
+            background: #ff3333;
+            color: #ffffff;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-left: 8px;
+        }
         .back-link {
             display: inline-block;
-            background: #3b82f6;
+            background: #007bff;
             color: #ffffff;
-            padding: 12px 25px;
-            border-radius: 25px;
+            padding: 8px 20px;
+            border-radius: 20px;
             text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            border: 1px solid #60a5fa;
+            font-size: 0.85rem;
+            margin-top: 12px;
+            transition: all 0.2s ease;
+            border: 1px solid #3388ff;
         }
-
         .back-link:hover {
-            background: #2563eb;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            background: #0056b3;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -683,13 +614,11 @@ app.get("/api", (req, res) => {
         <div class="header">
             <div class="logo">📚</div>
             <h1>API Documentation</h1>
-            <div class="subtitle">SarefinPort Server - Complete API Reference</div>
+            <div class="subtitle">SarefinPort Server - API Reference</div>
         </div>
-
         <div class="docs-container">
             <div class="section">
                 <h2>🔐 Authentication Endpoints</h2>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">POST</span>
@@ -697,7 +626,6 @@ app.get("/api", (req, res) => {
                     </div>
                     <div class="description">Authenticate admin user and receive JWT token</div>
                 </div>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">POST</span>
@@ -706,10 +634,8 @@ app.get("/api", (req, res) => {
                     <div class="description">Create initial admin account (first-time setup)</div>
                 </div>
             </div>
-
             <div class="section">
                 <h2>👤 Portfolio Endpoints</h2>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">GET</span>
@@ -717,7 +643,6 @@ app.get("/api", (req, res) => {
                     </div>
                     <div class="description">Get about me information with stats and social links</div>
                 </div>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">PUT</span>
@@ -726,7 +651,6 @@ app.get("/api", (req, res) => {
                     </div>
                     <div class="description">Update about me information</div>
                 </div>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">GET</span>
@@ -734,7 +658,6 @@ app.get("/api", (req, res) => {
                     </div>
                     <div class="description">Get all skills categorized with individual skill items</div>
                 </div>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">POST</span>
@@ -744,10 +667,8 @@ app.get("/api", (req, res) => {
                     <div class="description">Create new skill category</div>
                 </div>
             </div>
-
             <div class="section">
                 <h2>📞 Contact Endpoints</h2>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">GET</span>
@@ -755,7 +676,6 @@ app.get("/api", (req, res) => {
                     </div>
                     <div class="description">Get contact information</div>
                 </div>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">POST</span>
@@ -763,7 +683,6 @@ app.get("/api", (req, res) => {
                     </div>
                     <div class="description">Submit contact form message</div>
                 </div>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">GET</span>
@@ -773,10 +692,8 @@ app.get("/api", (req, res) => {
                     <div class="description">Get all contact messages (admin only)</div>
                 </div>
             </div>
-
             <div class="section">
                 <h2>⚙️ System Endpoints</h2>
-
                 <div class="endpoint">
                     <div class="endpoint-header">
                         <span class="method">GET</span>
@@ -785,8 +702,7 @@ app.get("/api", (req, res) => {
                     <div class="description">Check server health and status</div>
                 </div>
             </div>
-
-            <a href="/" class="back-link">← Back to Home</a>
+            <a href="/" class="back-link">← Home</a>
         </div>
     </div>
 </body>
@@ -803,91 +719,85 @@ app.use((req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - SarefinPort</title>
+    <title>404 - SarefinPort</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d0d0d;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: #e0e0e0;
+            padding: 16px;
+            color: #d9d9d9;
         }
-
         .container {
-            background: #2a2a4a;
-            border-radius: 16px;
-            padding: 50px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
             width: 100%;
-            border: 1px solid #3a3a5a;
+            border: 1px solid #2a2a2a;
         }
-
         .emoji {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #ff3e3e;
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            color: #ff3333;
         }
-
         h1 {
             color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(255, 62, 62, 0.3);
+            font-size: 1.8rem;
+            margin-bottom: 12px;
         }
-
         p {
-            color: #a0a0c0;
-            margin-bottom: 25px;
-            line-height: 1.6;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            line-height: 1.4;
         }
-
         .path {
-            background: #3a3a5a;
-            padding: 10px;
-            border-radius: 8px;
+            background: #1e1e1e;
+            padding: 8px;
+            border-radius: 6px;
             font-family: monospace;
-            margin: 15px 0;
-            color: #e0e0e0;
-            border: 1px solid #4a4a6a;
+            margin: 12px 0;
+            color: #d9d9d9;
+            font-size: 0.85rem;
+            border: 1px solid #2a2a2a;
         }
-
         .link {
             display: inline-block;
-            background: #3b82f6;
+            background: #007bff;
             color: #ffffff;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 8px 20px;
+            border-radius: 20px;
             text-decoration: none;
-            margin: 10px 5px;
-            transition: all 0.3s ease;
-            border: 1px solid #60a5fa;
+            font-size: 0.85rem;
+            margin: 6px;
+            transition: all 0.2s ease;
+            border: 1px solid #3388ff;
         }
-
         .link:hover {
-            background: #2563eb;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            background: #0056b3;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="emoji">🔍</div>
-        <h1>Page Not Found</h1>
+        <h1>404 Not Found</h1>
         <p>The requested URL was not found on this server.</p>
         <div class="path">${req.method} ${req.path}</div>
         <div>
-            <a href="/" class="link">Go Home</a>
+            <a href="/" class="link">Home</a>
             <a href="/api/health" class="link">Health Check</a>
         </div>
     </div>
@@ -913,17 +823,14 @@ app.use(
 app.listen(PORT, () => {
   console.log(`
   🚀 SarefinPort Server Started Successfully!
-
   📍 Local: http://localhost:${PORT}
   🔧 Environment: ${process.env.NODE_ENV || "development"}
   🗄️  Database: PostgreSQL
   ⏰ Started: ${new Date().toISOString()}
-
   📚 Available Routes:
   🌐 Home: http://localhost:${PORT}
   📊 Health: http://localhost:${PORT}/api/health
   📖 API Docs: http://localhost:${PORT}/api
-
   ⚡ Server is ready to handle requests!
   `);
 });
