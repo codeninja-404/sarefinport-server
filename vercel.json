@@ -1,38 +1,11 @@
-// {
-//   "builds": [
-//     {
-//       "src": "src/index.ts",
-//       "use": "@vercel/node"
-//     }
-//   ],
-//   "outputDirectory": "dist",
-//   "routes": [
-//     {
-//       "src": "/(.*)",
-//       "dest": "/dist/index.js"
-//     }
-//   ]
-// }
 {
   "version": 2,
   "builds": [
     {
-      "src": "/dist/index.js",
+      "src": "dist/index.js",
       "use": "@vercel/node",
-      "config": {
-        "includeFiles": [
-          "node_modules/@prisma/client/**",
-          "node_modules/.prisma/**",
-          "prisma/schema.prisma"
-        ]
-      }
+      "config": { "includeFiles": ["dist/**"] }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.js",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-    }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "dist/index.js" }]
 }

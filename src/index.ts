@@ -1282,4 +1282,4 @@ app.listen(PORT, () => {
   `);
 });
 
-export default app; // For Vercel
+export default app;
